@@ -46,8 +46,32 @@
     items.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  // flight request -> prefilled WhatsApp message (nothing is sent until the visitor presses send in WhatsApp)
+  // flight request -> email copy to the team (background, never blocks), then prefilled WhatsApp message
   var WA = "447424861470";
+  var MAIL = "https://formsubmit.co/ajax/8349ebe5a73cd96d6b4d5e0b99803c30";
+  function emailCopy(f) {
+    try {
+      if (f._honey && f._honey.value) return Promise.resolve();
+      var d = new FormData();
+      d.append("_subject", "New flight request — veleron.co.uk");
+      d.append("_template", "table");
+      d.append("_captcha", "false");
+      d.append("Urgent", f.urgent.checked ? "YES, within 24 hours" : "No");
+      d.append("From", f.from.value.trim());
+      d.append("To", f.to.value.trim());
+      d.append("Trip", f.trip.value);
+      d.append("Date", f.date.value || "-");
+      d.append("Passengers", f.pax.value || "-");
+      d.append("Name", f.name.value.trim() || "-");
+      d.append("Notes", f.notes.value.trim() || "-");
+      d.append("Submitted", new Date().toString());
+      d.append("Page", window.location.href);
+      var sent = fetch(MAIL, { method: "POST", body: d, headers: { Accept: "application/json" }, keepalive: true })
+        .catch(function () {});
+      var timeout = new Promise(function (r) { setTimeout(r, 1500); });
+      return Promise.race([sent, timeout]).catch(function () {});
+    } catch (err) { return Promise.resolve(); }
+  }
   var form = document.getElementById("flight-form");
   var msg = document.getElementById("form-msg");
   var dateInput = document.getElementById("f-date");
@@ -79,7 +103,8 @@
     if (f.name.value.trim()) lines.push("Name: " + f.name.value.trim());
     var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
     msg.textContent = "Opening WhatsApp with your request…";
-    window.location.href = url;
+    var go = function () { window.location.href = url; };
+    emailCopy(f).then(go, go);
   });
 
   var y = document.getElementById("year");

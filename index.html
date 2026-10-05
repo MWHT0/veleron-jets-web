@@ -179,8 +179,9 @@
       <div class="field field--full"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name"></div>
       <div class="field field--full"><label for="f-notes">Anything else</label><textarea id="f-notes" name="notes" rows="3" placeholder="Luggage, pets, catering, ground transport…"></textarea></div>
       <label class="check field--full"><input type="checkbox" name="urgent" id="f-urgent"> Urgent — travelling within 24 hours</label>
+      <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="f-website">Leave this empty</label><input id="f-website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="btn btn--light btn--block field--full" type="submit">Send request via WhatsApp</button>
-      <p class="form__fine field--full" id="form-msg" role="status" aria-live="polite">Opens WhatsApp with your details filled in. Nothing is sent until you press send.</p>
+      <p class="form__fine field--full" id="form-msg" role="status" aria-live="polite">Opens WhatsApp with your details filled in. A copy of your request is also emailed to our team.</p>
       <datalist id="airports">
         <option value="London Luton (LTN)"><option value="Farnborough (FAB)"><option value="London City (LCY)">
         <option value="Teterboro (TEB)"><option value="New York JFK"><option value="Dubai (DXB)"><option value="Al Maktoum (DWC)">
