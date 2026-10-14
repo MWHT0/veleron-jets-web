@@ -113,14 +113,13 @@
 
 (function () {
   var chips = document.querySelectorAll(".chip");
-  var cards = document.querySelectorAll(".ac");
+  var groups = document.querySelectorAll(".fs-group");
   chips.forEach(function (c) {
     c.addEventListener("click", function () {
       var f = c.getAttribute("data-filter");
       chips.forEach(function (x) { var on = x === c; x.classList.toggle("is-on", on); x.setAttribute("aria-pressed", String(on)); });
-      cards.forEach(function (card) {
-        card.hidden = !(f === "all" || card.getAttribute("data-make") === f);
-        card.classList.add("is-in");
+      groups.forEach(function (g) {
+        g.hidden = !(f === "all" || g.getAttribute("data-cls") === f);
       });
     });
   });

@@ -360,3 +360,59 @@ em{font-style:italic}
 .split__body .charter-cta .link{font-size:.9375rem}
 .dock.is-hidden{transform:translateY(160%)}
 @media (max-width:999px){.hero__shade{background:linear-gradient(180deg,rgba(20,28,24,.5) 0%,rgba(20,28,24,0) 20%),linear-gradient(0deg,rgba(20,28,24,.94) 0%,rgba(20,28,24,.78) 42%,rgba(20,28,24,.2) 66%,rgba(20,28,24,0) 80%)}}
+
+/* ===== For sale / Wanted (14 Oct 2026) ===== */
+.anchor{display:block;position:relative;top:-80px;visibility:hidden;height:0}
+.fs-banner{position:relative;margin:0 0 28px;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:var(--sand)}
+.fs-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.fs-banner figcaption{position:absolute;right:10px;bottom:8px;font-size:.6875rem;letter-spacing:.06em;color:rgba(243,241,236,.85);text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.fs-banner--dark{margin-top:4px;margin-bottom:36px;background:var(--forest)}
+@media (min-width:640px){.fs-banner{aspect-ratio:21/9}}
+@media (min-width:1000px){.fs-banner{aspect-ratio:3/1}}
+.fs-group{margin-top:34px}
+.fs-group[hidden]{display:none}
+.fs-group:first-of-type{margin-top:6px}
+.fs-group__title{display:flex;align-items:baseline;gap:10px;font:400 clamp(1.6rem,4.2vw,2.1rem)/1.1 var(--serif);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.fs-group__title span{font:500 .75rem/1 var(--sans);letter-spacing:.12em;color:var(--moss)}
+.fs-grid{display:grid;grid-template-columns:1fr;gap:10px;list-style:none;margin:0;padding:0}
+@media (min-width:640px){.fs-grid{grid-template-columns:1fr 1fr;gap:12px}}
+@media (min-width:1000px){.fs-grid{grid-template-columns:repeat(3,1fr);gap:14px}}
+.fs-card{position:relative;background:var(--bone);border:1px solid var(--line);border-radius:6px;padding:18px 18px 14px;display:flex;flex-direction:column;transition:border-color .25s var(--ease),box-shadow .35s var(--ease)}
+.fs-card:hover{border-color:rgba(30,42,36,.35);box-shadow:0 14px 30px -18px rgba(30,42,36,.35)}
+.fs-card__top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.fs-ref{font:600 .6875rem/1 var(--sans);letter-spacing:.08em;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 9px}
+.fs-year{font:500 .8125rem/1 var(--sans);letter-spacing:.12em;color:var(--moss)}
+.fs-make{margin-top:16px;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fs-model{font:400 clamp(1.7rem,6vw,2rem)/1.02 var(--serif);letter-spacing:-.01em;margin:4px 0 0}
+.fs-variant{font-size:.8125rem;color:var(--moss);margin-top:4px}
+.fs-specs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:12px 0 0}
+.fs-specs li{font-size:.75rem;line-height:1.2;color:var(--ink);background:var(--sand);border-radius:999px;padding:6px 10px}
+.fs-hl{font-size:.875rem;line-height:1.45;color:var(--muted);margin:12px 0 0}
+.fs-foot{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line)}
+.fs-card .fs-hl{margin-bottom:14px}
+.fs-price{font-size:.8125rem;font-weight:500;color:var(--ink)}
+.fs-actions{display:flex;align-items:center;gap:14px}
+.fs-mail{font-size:.8125rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px;padding:8px 0}
+.fs-cta{font-size:.8125rem;font-weight:500;text-decoration:none;color:var(--bone);background:var(--ink);border-radius:999px;padding:9px 14px;white-space:nowrap}
+.fs-cta:hover{background:var(--forest)}
+.fs-mail:focus-visible,.fs-cta:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.section--paper .note a{color:var(--ink)}
+.wanted-group{font:500 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,241,236,.7);margin:34px 0 4px}
+.wanted-group:first-of-type{margin-top:0}
+.mandates{list-style:none;padding:0;margin:0}
+.mandates h4{font:400 clamp(1.6rem,4.4vw,2.1rem)/1.05 var(--serif);margin-top:4px;color:var(--bone)}
+.m__crit b{display:block;font-weight:500;color:var(--bone);margin-bottom:2px}
+.note--light a{color:var(--bone)}
+@media (max-width:639px){
+  .fs-card{padding:14px 14px 10px}
+  .fs-make{margin-top:10px}
+  .fs-model{font-size:1.6rem}
+  .fs-specs{margin-top:8px}
+  .fs-specs li.fs-cls{display:none}
+  .fs-hl{margin-top:8px;font-size:.8125rem}
+  .fs-card .fs-hl{margin-bottom:10px}
+  .fs-foot{padding-top:10px}
+}
+.mandates h4{margin:4px 0 0}
+.mandates li > div{min-width:0}
+@media (max-width:639px){.mandates li{gap:6px}.m__crit{margin-top:4px}}
