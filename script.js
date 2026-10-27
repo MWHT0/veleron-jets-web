@@ -112,17 +112,15 @@
 })();
 
 (function () {
-  var chips = document.querySelectorAll(".chip");
-  var groups = document.querySelectorAll(".fs-group");
-  chips.forEach(function (c) {
-    c.addEventListener("click", function () {
-      var f = c.getAttribute("data-filter");
-      chips.forEach(function (x) { var on = x === c; x.classList.toggle("is-on", on); x.setAttribute("aria-pressed", String(on)); });
-      groups.forEach(function (g) {
-        g.hidden = !(f === "all" || g.getAttribute("data-cls") === f);
-      });
-    });
-  });
+  // old links to the retired listings section land on Aircraft Wanted
+  var old = { "#inventory": 1, "#for-sale": 1 };
+  if (old[window.location.hash]) {
+    var t = document.getElementById("sourcing");
+    if (t) {
+      history.replaceState(null, "", "#sourcing");
+      t.scrollIntoView();
+    }
+  }
 })();
 
 (function () {
